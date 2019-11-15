@@ -18,7 +18,8 @@ openldap:
 andi:
   enabled: true
   image:
-    tag: 0.6.0
+    name: rconaway2/andi
+    tag: 85.0.0
   redis:
     host: redis-master
   strimzi:
@@ -28,7 +29,8 @@ andi:
     type: ClusterIP
 discovery-api:
   image:
-    tag: 0.15.6
+    name: rconaway2/discovery_api
+    tag: 85.0.0
   redis:
     host: redis-master
   presto:
@@ -102,7 +104,8 @@ forklift:
   fullnameOverride: forklift
   enabled: true
   image:
-    tag: 0.9.0
+    name: rconaway2/forklift
+    tag: 85.0.0
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   kdp:
@@ -115,7 +118,8 @@ reaper:
   fullnameOverride: reaper
   enabled: true
   image:
-    tag: 0.10.1
+    name: rconaway2/reaper
+    tag: 85.0.0
   redis:
     host: redis-master
   strimzi:
@@ -126,6 +130,9 @@ reaper:
 valkyrie:
   fullnameOverride: valkyrie
   enabled: true
+  image:
+    name: rconaway2/valkyrie
+    tag: 85.0.0
   replicaCount: 1
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
