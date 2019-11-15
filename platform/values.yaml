@@ -1,8 +1,3 @@
-redis:
-  fullnameOverride: redis
-  usePassword: false
-  cluster:
-    enabled: false
 openldap:
   fullnameOverride: ldap-openldap
   enabled: true
@@ -21,7 +16,9 @@ andi:
     name: rconaway2/andi
     tag: 85.0.0
   redis:
-    host: redis-master
+    host: redis-smartcity-iac
+    password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
+
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -32,7 +29,8 @@ discovery-api:
     name: rconaway2/discovery_api
     tag: 85.0.0
   redis:
-    host: redis-master
+    host: redis-smartcity-iac
+    password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
   postgres:
@@ -111,7 +109,8 @@ forklift:
   kdp:
     url: "http://platform-kubernetes-data-platform-presto:8080"
   redis:
-    host: redis-master
+    host: redis-smartcity-iac
+    password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
   prometheus:
     scrape: false
 reaper:
@@ -121,7 +120,8 @@ reaper:
     name: rconaway2/reaper
     tag: 85.0.0
   redis:
-    host: redis-master
+    host: redis-smartcity-iac
+    password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
@@ -137,9 +137,10 @@ valkyrie:
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: redis-master
+    host: redis-smartcity-iac
+    password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
 flair:
-  enabled: true
+  enabled: false
   redis:
     host: redis-master
   strimzi:
