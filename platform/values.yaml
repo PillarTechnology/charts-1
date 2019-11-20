@@ -13,10 +13,10 @@ openldap:
 andi:
   enabled: true
   image:
-    name: rconaway2/andi
-    tag: 85.0.0
+    repository: rconaway2/andi
+    tag: 85.1.0
   redis:
-    host: redis-smartcity-iac
+    host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
 
   strimzi:
@@ -27,9 +27,9 @@ andi:
 discovery-api:
   image:
     name: rconaway2/discovery_api
-    tag: 85.0.0
+    tag: 85.1.0
   redis:
-    host: redis-smartcity-iac
+    host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
@@ -102,14 +102,14 @@ forklift:
   fullnameOverride: forklift
   enabled: true
   image:
-    name: rconaway2/forklift
-    tag: 85.0.0
+    repository: rconaway2/forklift
+    tag: 85.1.0
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   kdp:
     url: "http://platform-kubernetes-data-platform-presto:8080"
   redis:
-    host: redis-smartcity-iac
+    host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
   prometheus:
     scrape: false
@@ -117,10 +117,10 @@ reaper:
   fullnameOverride: reaper
   enabled: true
   image:
-    name: rconaway2/reaper
-    tag: 85.0.0
+    repository: rconaway2/reaper
+    tag: 85.1.0
   redis:
-    host: redis-smartcity-iac
+    host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
   strimzi:
     kafka:
@@ -131,13 +131,13 @@ valkyrie:
   fullnameOverride: valkyrie
   enabled: true
   image:
-    name: rconaway2/valkyrie
-    tag: 85.0.0
+    repository: rconaway2/valkyrie
+    tag: 85.1.0
   replicaCount: 1
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: redis-smartcity-iac
+    host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
 flair:
   enabled: false
