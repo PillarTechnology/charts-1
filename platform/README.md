@@ -43,14 +43,13 @@ helm upgrade --install platform scdp/platform \
  --set flair.enabled=false \
  --set odo.enabled=false
  ```
-
  helm upgrade --install platform localscos/platform \
   --set kubernetes-data-platform.enabled=true \
   --set kubernetes-data-platform.minio.gateway.enable=true \
   --set kubernetes-data-platform.minio.gateway.type=azure \
   --set kubernetes-data-platform.global.environment=demo \
   --set kubernetes-data-platform.global.objectStore.accessKey='scosqaiac' \
-  --set kubernetes-data-platform.global.objectStore.bucketName='scosqa-iac' \
+  --set kubernetes-data-platform.global.objectStore.bucketName='scosqablob' \
   --set kubernetes-data-platform.global.objectStore.accessSecret='B4ExjInWoWvYdBaasCDx3VNZ+7NsBafrqTdktw//yXpw1sIYkXRFcw1ZNCXi1D0BhtARP0+NFxM6qp5OkhyXJw==' \
   --set kubernetes-data-platform.postgres.service.externalAddress=postgresql-smartcity-iac.postgres.database.azure.com \
   --set kubernetes-data-platform.postgres.db.user=postgres@postgresql-smartcity-iac \

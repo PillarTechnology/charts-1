@@ -14,7 +14,7 @@ andi:
   enabled: true
   image:
     repository: rconaway2/andi
-    tag: 85.1.0
+    tag: 85.3.0
   redis:
     host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
@@ -27,7 +27,7 @@ andi:
 discovery-api:
   image:
     name: rconaway2/discovery_api
-    tag: 85.1.0
+    tag: 85.3.0
   redis:
     host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
@@ -35,9 +35,8 @@ discovery-api:
     url: http://platform-kubernetes-data-platform-presto:8080
   postgres:
     host: ''
-  strimzi:
-    kafka:
-      brokers: streaming-service-kafka-bootstrap:9092
+  kafka:
+    brokers: streaming-service-kafka-bootstrap:9092
   s3:
     hostedFileBucket: hosted-bucket
   ldap:
@@ -103,7 +102,7 @@ forklift:
   enabled: true
   image:
     repository: rconaway2/forklift
-    tag: 85.1.0
+    tag: 85.3.0
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   kdp:
@@ -118,7 +117,7 @@ reaper:
   enabled: true
   image:
     repository: rconaway2/reaper
-    tag: 85.1.0
+    tag: 85.3.0
   redis:
     host: redis-smartcity-iac.redis.cache.windows.net
     password: wl3RmcdRFKABs5MmcNN4omC5BtwQhwSZCGDySBEZ8hs=
@@ -132,7 +131,7 @@ valkyrie:
   enabled: true
   image:
     repository: rconaway2/valkyrie
-    tag: 85.1.0
+    tag: 85.3.0
   replicaCount: 1
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
@@ -153,3 +152,5 @@ kafka:
   storage:
     enable: false
     storageSize: 5Gi
+redis:
+  enabled: false
