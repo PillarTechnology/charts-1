@@ -37,28 +37,12 @@ helm upgrade --install platform scdp/platform \
  --set kubernetes-data-platform.postgres.db.password=<DB PASSWORD> \
  --set kubernetes-data-platform.postgres.enable=false \
  --set discovery-api.postgres.host=<DB SERVER NAME same as above> \
+ --set discovery-api.postgres.dbname=metastore \
+ --set discovery-api.postgres.user=<DB USERNAME> \
+ --set discovery-api.postgres.password=<DB PASSWORD> \
  --set openldap.adminPassword=admin \
  --set forklift.postgres.host=<DB SERVER NAME same as above> \
  --set discovery-api.s3.hostedFileBucket=hosted-bucket \
  --set flair.enabled=false \
  --set odo.enabled=false
  ```
- helm upgrade --install platform localscos/platform \
-  --set kubernetes-data-platform.enabled=true \
-  --set kubernetes-data-platform.minio.gateway.enable=true \
-  --set kubernetes-data-platform.minio.gateway.type=azure \
-  --set kubernetes-data-platform.global.environment=demo \
-  --set kubernetes-data-platform.global.objectStore.accessKey='scosqaiac' \
-  --set kubernetes-data-platform.global.objectStore.bucketName='scosqablob' \
-  --set kubernetes-data-platform.global.objectStore.accessSecret='B4ExjInWoWvYdBaasCDx3VNZ+7NsBafrqTdktw//yXpw1sIYkXRFcw1ZNCXi1D0BhtARP0+NFxM6qp5OkhyXJw==' \
-  --set kubernetes-data-platform.postgres.service.externalAddress=postgresql-smartcity-iac.postgres.database.azure.com \
-  --set kubernetes-data-platform.postgres.db.user=postgres@postgresql-smartcity-iac \
-  --set kubernetes-data-platform.postgres.db.name=metastore \
-  --set kubernetes-data-platform.postgres.db.password=ThisIs4n4dminP4ssword \
-  --set kubernetes-data-platform.postgres.enable=false \
-  --set discovery-api.postgres.host=postgresql-smartcity-iac.postgres.database.azure.com \
-  --set openldap.adminPassword=admin \
-  --set forklift.postgres.host=postgresql-smartcity-iac.postgres.database.azure.com \
-  --set discovery-api.s3.hostedFileBucket=hosted-bucket \
-  --set flair.enabled=false \
-  --set odo.enabled=false

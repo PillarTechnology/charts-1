@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   andi:
   - apiVersion: v1
+    created: 2019-11-21T10:56:05.248175-05:00
+    description: REST API to allow for dataset definition ingestion
+    digest: daadfcb7d9ed54a81a3fbc140382e80eb2375f61aaa13145e2126dd3897214ea
+    name: andi
+    urls:
+    - andi-1.1.3.tgz
+    version: 1.1.3
+  - apiVersion: v1
     created: 2019-11-19T16:18:41.444293-05:00
     description: REST API to allow for dataset definition ingestion
     digest: ba9b4c8b9d2597f8ee3ed8e930f94cc98ac54d2576692c13f4ebff4ce3d3ce4f
@@ -53,6 +61,15 @@ entries:
     - carpenter-1.0.0.tgz
     version: 1.0.0
   discovery-api:
+  - apiVersion: v1
+    appVersion: 1.0.0-static
+    created: 2019-11-21T10:55:59.555599-05:00
+    description: A middleware layer to connect data consumers with the data sources
+    digest: 970ee759f221af088143c13088e598d049a4bfb6fa60f783831e1d94bc4ceb8c
+    name: discovery-api
+    urls:
+    - discovery-api-0.4.4.tgz
+    version: 0.4.4
   - apiVersion: v1
     appVersion: 1.0.0-static
     created: 2019-11-20T17:10:15.99323-05:00
@@ -226,6 +243,15 @@ entries:
   forklift:
   - apiVersion: v1
     appVersion: "1.0"
+    created: 2019-11-21T10:55:49.254493-05:00
+    description: Loads data from the transformed topic into Presto
+    digest: 8885f9ea1112be594ea3acad8dbc3afe75fe416dd71f9bf7299b7cbaedc77fe8
+    name: forklift
+    urls:
+    - forklift-2.4.1.tgz
+    version: 2.4.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: 2019-11-19T15:46:43.28947-05:00
     description: Loads data from the transformed topic into Presto
     digest: 4d1829b3a54ba603385caea8297d21b42f1d97c4413e8802b9a45dbd77352460
@@ -393,9 +419,9 @@ entries:
   platform:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-20T17:18:52.506444-05:00
+    created: 2019-11-21T10:56:28.447042-05:00
     description: Master chart that deploys the data platform.
-    digest: 2aee368bfb5ebacef02cbd9532df897e03647efdd19e7a8ea44587c3fabd6a2d
+    digest: 564927370c2200bcd620263db77a4f0bf1e8af766dcfcb0f6d19c1a0f82add90
     name: platform
     urls:
     - platform-0.0.3.tgz
@@ -419,6 +445,16 @@ entries:
     - platform-0.0.1.tgz
     version: 0.0.1
   reaper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-11-21T10:55:43.858815-05:00
+    description: Elixir producer-consumer. Retrieves streamed data, and loads it onto
+      a Kafka topic
+    digest: 0e33cdb284117088083cf7f02501ae76d8833d929adeb1365a2f87dbdecab432
+    name: reaper
+    urls:
+    - reaper-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
     created: 2019-11-19T15:46:47.610453-05:00
@@ -450,6 +486,15 @@ entries:
     - streisand-1.0.0.tgz
     version: 1.0.0
   valkyrie:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-11-21T10:55:32.237447-05:00
+    description: Validates data from raw topic and writes it to validated topic
+    digest: 6f1d9c3ba92ddeaef98df18cc6ff19dbe47e1ee6f408edf7fde6fc0e8ad33049
+    name: valkyrie
+    urls:
+    - valkyrie-2.4.1.tgz
+    version: 2.4.1
   - apiVersion: v1
     appVersion: "1.0"
     created: 2019-11-19T15:46:51.900519-05:00
@@ -515,4 +560,4 @@ entries:
     urls:
     - voltron-1.0.0.tgz
     version: 1.0.0
-generated: 2019-11-20T17:18:52.502326-05:00
+generated: 2019-11-21T10:56:28.442304-05:00
