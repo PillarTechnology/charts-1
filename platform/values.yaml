@@ -1,3 +1,11 @@
+redisService:
+  host: &redisHost ''
+  password: &redisPassword ''
+postgresService:
+  userName: &postgresUser ''
+  password: &postgresPassword ''
+  hostIp: &postgresHost ''
+
 openldap:
   fullnameOverride: ldap-openldap
   enabled: true
@@ -13,24 +21,26 @@ openldap:
 andi:
   enabled: true
   redis:
-    host: ''
-    password: ''
+    host: *redisHost
+    password: *redisPassword
 
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
   service:
     type: ClusterIP
+
 discovery-api:
   redis:
-    host: ''
-    password: ''
+    host: *redisHost
+    password: *redisPassword
   presto:
     url: http://platform-kubernetes-data-platform-presto:8080
   postgres:
-    host: ''
-    dbname: ''
-    user: ''
+    host: *postgresHost
+    dbname: metastore
+    user: *postgresUser
+    password: *postgresPassword
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   s3:
@@ -43,6 +53,7 @@ discovery-api:
   environment: demo
   service:
     type: LoadBalancer
+
 discovery-streams:
   enabled: false
   image:
@@ -50,6 +61,7 @@ discovery-streams:
     tag: 0.12.4
   service:
     type: LoadBalancer
+
 kubernetes-data-platform:
   fullnameOverride: kdp
   enabled: false
@@ -92,14 +104,15 @@ kubernetes-data-platform:
   postgres:
     enable: true
     service:
-      externalAddress: ''
+      externalAddress: *postgresHost
     db:
       name: metastore
-      user: ''
-      password: ''
+      user: *postgresUser
+      password: *postgresPassword
   metastore:
     allowDropTable: true
     timeout: 360m
+
 forklift:
   fullnameOverride: forklift
   enabled: true
@@ -108,21 +121,25 @@ forklift:
   kdp:
     url: "http://platform-kubernetes-data-platform-presto:8080"
   redis:
-    host: ''
-    password: ''
+    host: *redisHost
+    password: *redisPassword
   prometheus:
     scrape: false
+  postgres:
+    host: *postgresHost
+
 reaper:
   fullnameOverride: reaper
   enabled: true
   redis:
-    host: ''
-    password: ''
+    host: *redisHost
+    password: *redisPassword
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
   vault:
     endpoint: ""
+
 valkyrie:
   fullnameOverride: valkyrie
   enabled: true
@@ -130,21 +147,26 @@ valkyrie:
   kafka:
     brokers: streaming-service-kafka-bootstrap:9092
   redis:
-    host: ''
-    password: ''
+    host: *redisHost
+    password: *redisPassword
+
 flair:
   enabled: false
   redis:
-    host: redis-master
+    host: *redisHost
+    password: *redisPassword
   strimzi:
     kafka:
       brokers: streaming-service-kafka-bootstrap:9092
+
 odo:
   enabled: true
+
 kafka:
   enabled: true
   storage:
     enable: false
     storageSize: 5Gi
+
 redis:
   enabled: false
